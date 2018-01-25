@@ -71,7 +71,7 @@ public Interface Observer
 {
   public void Update(int state)
 }
-
+```
 
 #### Konkreter-Observer
 
