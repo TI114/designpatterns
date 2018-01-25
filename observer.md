@@ -25,13 +25,13 @@ public abstract class Subject
     // Observer wird in die Observerliste hinzugefügt
     public void attach(Observer newObserver)
     {
-        observerList.add(newObserver);
+        observerList.Add(newObserver);
     }
 
     // Observer wird aus der Liste entfernt
     public void detach(Observer newObserver)
     {
-        observerList.remove(newObserver);
+        observerList.Remove(newObserver);
     }
 
     // Allen observer in der Liste wird der neue Werd übergeben bzw. deren Update Methode wird aufgerufen.
@@ -52,7 +52,7 @@ public class ConcreteSubject : Subject
 {
   private int state;
 
-  public Setstate(int value)
+  public void Setstate(int value)
   {
     state = value;
   }
@@ -78,9 +78,9 @@ public Interface Observer
 ```csharp
 public class ConcretObserver : Observer
 {
-  void Update(int state)
+  public void Update(int state)
   {
-    Console.Writeline("Mein status ist : " + state);
+    Console.WriteLine("Mein status ist : " + state);
   }
 }
 ```
