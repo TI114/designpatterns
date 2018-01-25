@@ -45,12 +45,10 @@ public abstract class Subject
 }
 ```
 
-
-#### Konkretes-Objekt
+#### Konkretes-Subjekt
 
 ```csharp
-
-public class ConcretSubjekt : Subject
+public class ConcreteSubject : Subject
 {
   private int state;
 
@@ -73,7 +71,11 @@ public Interface Observer
 {
   public void Update(int state)
 }
+```
 
+#### Konkreter-Observer
+
+```csharp
 public class ConcretObserver : Observer
 {
   void Update(int state)
@@ -91,12 +93,12 @@ public class client
 {
   public void test()
   {
-    ConcretSubjekt SubjectA = new ConcretSubjekt();
-    ConcretSubjekt.attach = new ConcretObserver();
+    ConcreteSubject SubjectA = new ConcreteSubject();
+    ConcreteSubject.attach = new ConcreteObserver();
 
-    ConcretSubjekt.Setstate(2);
+    ConcreteSubject.Setstate(2);
     // Ausgabe in der Console: "Mein Status ist : 2"
-    ConcretSubjekt.Setstate(5);
+    ConcreteSubject.Setstate(5);
     // Ausgabe in der Console: "Mein Status ist : 5"
   }
 }
