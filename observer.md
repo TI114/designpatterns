@@ -48,7 +48,6 @@ public abstract class Subject
 #### Konkretes-Subjekt
 
 ```csharp
-
 public class ConcreteSubject : Subject
 {
   private int state;
@@ -75,6 +74,8 @@ public Interface Observer
 
 
 #### Konkreter-Observer
+
+```csharp
 public class ConcretObserver : Observer
 {
   void Update(int state)
