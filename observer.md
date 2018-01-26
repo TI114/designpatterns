@@ -25,13 +25,13 @@ public abstract class Subject
     // Observer wird in die Observerliste hinzugefügt
     public void attach(Observer newObserver)
     {
-        observerList.add(newObserver);
+        observerList.Add(newObserver);
     }
 
     // Observer wird aus der Liste entfernt
     public void detach(Observer newObserver)
     {
-        observerList.remove(newObserver);
+        observerList.Remove(newObserver);
     }
 
     // Allen observer in der Liste wird der neue Werd übergeben bzw. deren Update Methode wird aufgerufen.
@@ -45,16 +45,14 @@ public abstract class Subject
 }
 ```
 
-
-#### Konkretes-Objekt
+#### Konkretes-Subjekt
 
 ```csharp
-
-public class ConcretSubjekt : Subject
+public class ConcreteSubject : Subject
 {
   private int state;
 
-  public Setstate(int value)
+  public void Setstate(int value)
   {
     state = value;
   }
@@ -73,12 +71,16 @@ public Interface Observer
 {
   public void Update(int state)
 }
+```
 
+#### Konkreter-Observer
+
+```csharp
 public class ConcretObserver : Observer
 {
-  void Update(int state)
+  public void Update(int state)
   {
-    Console.Writeline("Mein status ist : " + state);
+    Console.WriteLine("Mein status ist : " + state);
   }
 }
 ```
@@ -91,12 +93,12 @@ public class client
 {
   public void test()
   {
-    ConcretSubjekt SubjectA = new ConcretSubjekt();
-    ConcretSubjekt.attach = new ConcretObserver();
+    ConcreteSubject SubjectA = new ConcreteSubject();
+    ConcreteSubject.attach = new ConcreteObserver();
 
-    ConcretSubjekt.Setstate(2);
+    ConcreteSubject.Setstate(2);
     // Ausgabe in der Console: "Mein Status ist : 2"
-    ConcretSubjekt.Setstate(5);
+    ConcreteSubject.Setstate(5);
     // Ausgabe in der Console: "Mein Status ist : 5"
   }
 }
